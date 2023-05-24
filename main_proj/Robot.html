@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="script.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Aruiya's Web</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='style_for_R.css'>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Aruiya</a>
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="Doc.html">Doc</a></li>
+          <li><a href="Robot.html" class="active">Robot</a></li>
+          <li><a href="More.html">Learn More</a></li>
+        </ul>
+      </header>
+      <section>
+        <img src="./images/stars.png" id="stars">
+        <img src="images/moon.png" id="moon">
+        <!-- <img src="images/mountains_behind.png" id="mountains_behind"> -->
+        <!-- <h2 id="text">Moon Light</h2> -->
+        <!-- <img src="images/mountains_front.png" id="mountains_front"> -->
+ 
+        <div class="wrapper">
+            <div class="input-data">
+                <input type="text" required="" id="command">
+                <div class="underline"></div>
+                <label>Commands input</label>
+            </div>
+        </div>
+        <div class="button">
+          <button onclick="text_deal();return false;" >send</button>
+      </div>
+      <script>
+        function text_deal()
+        {
+          var index_num=0;
+          index_num=function(){index_num++};
+          var text=document.getElementById("command").value;
+          const fs = require('fs');
+          fs.writeFile('command.txt', text, function (err) {
+            if (err) throw err;
+            console.log('File created successfully!');
+          });
+
+          
+        }; 
+      </script>
+        
+      </section>
+      
+      
+    
+</body>
+</html>
